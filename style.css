@@ -1,0 +1,206 @@
+
+#menu{
+    position:relative; /*okresla gdzie element sie znajduje, relative - przesuniecie wzgledem pozycji w html */
+    top:0px; /*odleglosc od gory */
+    right:20px; /*odleglosc od prawej*/
+    display:flex; /*okresla ze element staje sie kontenerem flexbox, wygodne pozycjonowanie dzieci */
+    justify-content:center; /*ustawienie pozycji dzieci w kontenerze w poziomie*/
+    align-items:center; /*ustawienie pozycji dzieci w kontenerze w pionie */
+    width:100%; /*okresla szerokosc elementu*/
+    top:0px; /*odleglosc od gory */
+    padding: 0px 20px 0px 20px;
+}
+
+#menu a{
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    display:flex;
+    left:3px;
+    width:100%;
+    font-size:1.2em;
+    font-weight:500;
+    padding: 10px;
+    margin-left:-2px;
+    margin-right:-2px;
+    border:solid;
+    justify-content:center;
+    align-items:center;
+}
+#menu a:hover{
+    cursor:pointer;
+    color:#5e3966;
+}
+#menu a::after{
+    content:'';
+    position:absolute;
+    left:0px;
+    bottom:-3px;
+    width:100%;
+    height:3px;
+    background:white;
+    border-radius:5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+#menu a:hover::after{
+    transform-origin:left;
+    transform: scaleX(1);
+}
+
+ul{
+    display:block;
+    
+}
+li{
+    display:block;
+    border:solid;
+    border-radius:5px;
+    margin:10px;
+    width: 80px;
+    padding-left: 10px;
+    font-size: 1.2em;
+}
+#container p {
+    left: 10px;
+    background-color: lightgreen;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#tic-tac-toe{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#board{
+    width: 620px;
+    height: 620px;
+    background-color: black;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 5px 5px;
+    padding: 5px;
+    justify-items: center;
+    align-items:center;
+    margin:10px;
+    position: relative;
+    left: 50%;
+    translate: -50% 0;
+    border-radius:5px;
+}
+.pool{
+    width: 200px;
+    height: 200px;
+    background-color:white;
+    position: relative;
+    margin: 0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.untaken:hover{
+    cursor:pointer;
+    background-color:#faedcd;
+}
+
+.cross {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: transparent;
+  }
+
+.cross::before,
+.cross::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px; 
+  background-color: #2888F8; 
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+}
+
+.cross::before {
+  rotate: 45deg;
+}
+
+.cross::after {
+    rotate: -45deg;
+}
+.circle{
+  position:relative;
+  border-radius: 50%;
+  width: 80%;
+  height:80%;
+  border-color: #A728F8;
+  border-width: 10px;
+  border-style: solid;
+}
+#end{
+    background-color:white;
+    height: 100px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    position:absolute;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 3px;
+}
+
+#button{
+     position:absolute;
+     width: 50%;
+     top: 50%;
+     translate: 0 100%;
+     height: 50px;
+     border-radius: 10px;
+     background-color: #7d7979;
+     z-index: 2;
+     font-weight:bold;
+}
+#button:hover{
+    cursor: pointer;
+    background-color: #6b6868;
+}
+
+.invisible{
+    visibility:hidden;
+}
+#canvas{
+    position: absolute;
+    background-color: transparent;
+    height:100%;
+    width: 100%;
+    z-index: 1;
+}
+svg{
+    height: 100%;
+    width:100%;
+}
+ellipse{
+    stroke-width: 10px;
+    stroke: #A728F8;
+    stroke-dasharray: 547;
+    stroke-dashoffset: 547;
+    animation: anim .5s linear forwards; 
+    /* 547 to max */
+}
+
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
